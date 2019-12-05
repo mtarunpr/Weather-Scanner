@@ -18,20 +18,34 @@ class Weather extends React.Component{
                 }
                 
                 {
-                    this.props.temperature && <p className="weather__key">Temperature: 
-                        <span className="weather__value">  {this.props.temperature}</span>
+                    this.props.temp_min && this.props.temp_max && <p className="weather__key">Temperature: 
+                        <span className="weather__value"> Min: {this.props.temp_min} &deg;C, Max: {this.props.temp_max} &deg;C </span>
                     </p>
                 }
 
                 {
                     this.props.humidity && <p className="weather__key">Humidity: 
-                        <span className="weather__value">  {this.props.humidity}</span>
+                        <span className="weather__value">  {this.props.humidity}%</span>
                     </p>
                 }
 
                 {
                     this.props.description && <p className="weather__key">Conditions:  
-                        <span className="weather__value">  {this.props.description}</span>
+                        <span className="weather__value">  {this.props.description}                       
+                        <img src={"http://openweathermap.org/img/wn/" + this.props.icon + "@2x.png"}></img>
+                        </span> 
+                    </p>
+                }
+
+                {
+                    this.props.wind_speed && <p className="weather__key">Wind Speed:  
+                    <span className="weather__value">  {this.props.wind_speed}</span>
+                    </p>
+                }
+
+                {
+                    this.props.cloudliness && <p className="weather__key">Cloudliness:  
+                    <span className="weather__value">  {this.props.cloudliness}%</span>
                     </p>
                 }
 
